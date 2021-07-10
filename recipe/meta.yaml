@@ -24,6 +24,7 @@ requirements:
     - python >=3.7
     - scipy
     - pyomo
+    - pyutilib
     - munch
 
 test:
