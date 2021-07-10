@@ -1,5 +1,5 @@
 {% set name = "pao" %}
-{% set version = "1.0.1" %}
+{% set version = "1.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4616b34d060c05712e85d861671f1560ec636bf7cee6c23552ac78c7ad0bf96a
+  sha256: a35c7ab54dcb566811f6dab6793b089f585617b1c93f60a51dd3971bef727427
 
 build:
   noarch: python
