@@ -6,28 +6,30 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: a35c7ab54dcb566811f6dab6793b089f585617b1c93f60a51dd3971bef727427
 
 build:
   noarch: python
-  number: 0
+  number: 1
   # Not needed for a noarch package
   #skip: True  # [py<37]
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - scipy
     - pyomo
     - pyutilib
     - munch
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pao
     - pao.common
